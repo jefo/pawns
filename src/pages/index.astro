@@ -152,26 +152,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="text-ink-soft text-xs mt-1">Спасибо, что выбираете нас</p>
   </footer>
 
-  <script>
-    const btn = document.getElementById('back-to-top');
-    const toc = document.querySelector('nav');
+  <script is:inline>
+    (function() {
+      var btn = document.getElementById('back-to-top');
+      var toc = document.querySelector('nav');
+      if (!btn || !toc) return;
 
-    // Show/hide back-to-top button
-    window.addEventListener('scroll', () => {
-      btn.style.opacity = window.scrollY > 400 ? '1' : '0';
-      btn.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
-    });
+      function update() {
+        var y = window.scrollY || document.documentElement.scrollTop;
+        var show = y > 400;
+        btn.style.opacity = show ? '1' : '0';
+        btn.style.pointerEvents = show ? 'auto' : 'none';
+      }
 
-    // Scroll to top
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Smooth scroll for ToC links
-    toc.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-    });
+
+      var links = toc.querySelectorAll('a[href^="#"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    })();
   </script>
 </BaseLayout>
