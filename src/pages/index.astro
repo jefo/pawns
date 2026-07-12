@@ -131,11 +131,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- VIDEO -->
   <section class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Видео-инструкция</h2>
-    <div class="w-full aspect-video bg-beige rounded-xl border border-dashed border-accent-soft flex flex-col items-center justify-center gap-2.5 text-ink-soft text-sm">
-      <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white text-xl">▶</div>
-      <span>Видео появится здесь</span>
-    </div>
-    <p class="text-ink-soft text-xs italic">Скоро добавим подробную видео-инструкцию.</p>
+    <p class="text-ink-soft text-sm">
+      Инструкция по добавлению и снятию звеньев браслета Nomination.
+    </p>
+    <video
+      src="instruction-video.mp4"
+      controls
+      playsinline
+      preload="metadata"
+      class="w-full max-w-[320px] mx-auto rounded-xl"
+      poster="assembly-instruction.jpg"
+    >
+      Ваш браузер не поддерживает видео.
+    </video>
+    <p class="text-ink-soft text-sm leading-relaxed">
+      Посмотрите это видео и узнайте, как легко и безопасно менять звенья, создавая новые комбинации и сохраняя качество вашего украшения. Простые шаги — стиль без усилий!
+    </p>
   </section>
 
   <!-- FOOTER -->
