@@ -44,71 +44,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- DIVIDER -->
   <div class="w-10 h-px bg-accent-soft mx-auto"></div>
 
-  <!-- PHOTO INSTRUCTIONS -->
+  <!-- STEPS -->
   <section class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Как снимать и надевать звенья</h2>
-    <p class="text-ink-soft text-sm">
-      Если техника правильного снятия кажется сложной — вот наглядное руководство. На всякий случай.
-    </p>
 
-    <div class="flex flex-col gap-8 mt-2">
-      <!-- Step 1 -->
-      <div class="flex flex-col gap-3">
-        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 1</div>
-        <div
-          class="w-full aspect-4/3 rounded-xl bg-beige"
-          style="
-            background-image: url('assembly-instruction.jpg');
-            background-size: auto 550%;       /* ← зум: больше = ближе, меньше = шире */
-            background-position: 50% 8%;      /* ← центр кадра: X% Y% (от левого-верхнего угла картинки) */
-            background-repeat: no-repeat;
-          "
-        ></div>
-        <p class="text-ink-soft text-sm">Зафиксируйте браслет, чтобы он не сместился во время работы.</p>
+    <div class="flex flex-col gap-2">
+      <div class="flex gap-3">
+        <span class="text-accent font-display text-sm shrink-0 mt-0.5">1.</span>
+        <p class="text-ink-soft text-sm">Зафиксируйте браслет, чтобы он не сместился.</p>
       </div>
-
-      <!-- Step 2 -->
-      <div class="flex flex-col gap-3">
-        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 2</div>
-        <div
-          class="w-full aspect-4/3 rounded-xl bg-beige"
-          style="
-            background-image: url('assembly-instruction.jpg');
-            background-size: auto 550%;
-            background-position: 50% 25%;
-            background-repeat: no-repeat;
-          "
-        ></div>
-        <p class="text-ink-soft text-sm">Осторожно, специальным инструментом или аккуратно пальцами, захватите звенья.</p>
+      <div class="flex gap-3">
+        <span class="text-accent font-display text-sm shrink-0 mt-0.5">2.</span>
+        <p class="text-ink-soft text-sm">Осторожно, используя специальный инструмент или аккуратно пальцами, захватите звенья.</p>
       </div>
-
-      <!-- Step 3 -->
-      <div class="flex flex-col gap-3">
-        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 3</div>
-        <div
-          class="w-full aspect-4/3 rounded-xl bg-beige"
-          style="
-            background-image: url('assembly-instruction.jpg');
-            background-size: auto 550%;
-            background-position: 50% 42%;
-            background-repeat: no-repeat;
-          "
-        ></div>
+      <div class="flex gap-3">
+        <span class="text-accent font-display text-sm shrink-0 mt-0.5">3.</span>
         <p class="text-ink-soft text-sm">Медленно разъедините звенья, следя за тем, чтобы не повредить покрытие.</p>
       </div>
-
-      <!-- Step 4 -->
-      <div class="flex flex-col gap-3">
-        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 4</div>
-        <div
-          class="w-full aspect-4/3 rounded-xl bg-beige"
-          style="
-            background-image: url('assembly-instruction.jpg');
-            background-size: auto 550%;
-            background-position: 50% 58%;
-            background-repeat: no-repeat;
-          "
-        ></div>
+      <div class="flex gap-3">
+        <span class="text-accent font-display text-sm shrink-0 mt-0.5">4.</span>
         <p class="text-ink-soft text-sm">Чтобы надеть — повторите в обратном порядке: соедините звенья и аккуратно закрепите.</p>
       </div>
     </div>
