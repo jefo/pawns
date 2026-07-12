@@ -12,6 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="text-xs text-accent tracking-[0.12em] uppercase mt-0.5">забота об украшениях</div>
   </header>
 
+  <!-- TABLE OF CONTENTS -->
+  <nav class="flex flex-wrap gap-2 justify-center">
+    <a href="#photo" class="text-xs text-ink-soft no-underline px-3 py-1.5 rounded-full bg-beige hover:bg-accent-soft transition-colors">Фото-инструкция</a>
+    <a href="#steps" class="text-xs text-ink-soft no-underline px-3 py-1.5 rounded-full bg-beige hover:bg-accent-soft transition-colors">Как снимать звенья</a>
+    <a href="#care" class="text-xs text-ink-soft no-underline px-3 py-1.5 rounded-full bg-beige hover:bg-accent-soft transition-colors">Правила ухода</a>
+    <a href="#video" class="text-xs text-ink-soft no-underline px-3 py-1.5 rounded-full bg-beige hover:bg-accent-soft transition-colors">Видео</a>
+  </nav>
+
   <!-- HERO -->
   <section class="text-center">
     <h1 class="font-display text-3xl font-medium text-ink leading-tight mb-2">
@@ -26,7 +34,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="w-10 h-px bg-accent-soft mx-auto"></div>
 
   <!-- PHOTO INSTRUCTION (FULL DIAGRAM) -->
-  <section class="flex flex-col gap-4">
+  <section id="photo" class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Фото-инструкция</h2>
     <p class="text-ink-soft text-sm">
       Как одевать и снимать звенья браслета Nomination (менее удобный способ)
@@ -45,7 +53,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="w-10 h-px bg-accent-soft mx-auto"></div>
 
   <!-- STEPS -->
-  <section class="flex flex-col gap-4">
+  <section id="steps" class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Как снимать и надевать звенья</h2>
 
     <div class="flex flex-col gap-2">
@@ -72,7 +80,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="w-10 h-px bg-accent-soft mx-auto"></div>
 
   <!-- CARE INSTRUCTIONS -->
-  <section class="flex flex-col gap-4">
+  <section id="care" class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Правила ухода</h2>
 
     <div class="flex flex-col gap-3.5">
@@ -109,7 +117,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="w-10 h-px bg-accent-soft mx-auto"></div>
 
   <!-- VIDEO -->
-  <section class="flex flex-col gap-4">
+  <section id="video" class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Видео-инструкция</h2>
     <p class="text-ink-soft text-sm">
       Инструкция по добавлению и снятию звеньев браслета Nomination.
@@ -129,9 +137,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
   </section>
 
+  <!-- BACK TO TOP -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center shadow-md opacity-0 pointer-events-none transition-opacity duration-300 z-50 border-0 cursor-pointer"
+    aria-label="Наверх"
+  >
+    ↑
+  </button>
+
   <!-- FOOTER -->
   <footer class="text-center pt-4">
     <div class="font-display text-xl font-medium text-ink">paws уют</div>
     <p class="text-ink-soft text-xs mt-1">Спасибо, что выбираете нас</p>
   </footer>
+
+  <script>
+    const btn = document.getElementById('back-to-top');
+    const toc = document.querySelector('nav');
+
+    // Show/hide back-to-top button
+    window.addEventListener('scroll', () => {
+      btn.style.opacity = window.scrollY > 400 ? '1' : '0';
+      btn.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
+    });
+
+    // Scroll to top
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Smooth scroll for ToC links
+    toc.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </BaseLayout>
