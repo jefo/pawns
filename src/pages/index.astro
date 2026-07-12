@@ -39,11 +39,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="text-ink-soft text-sm">
       Как одевать и снимать звенья браслета Nomination (менее удобный способ)
     </p>
-    <img
-      src="assembly-instruction.jpg"
-      alt="Фото-инструкция: как одевать и снимать звенья браслета Nomination"
-      class="w-full rounded-xl"
-    />
+    <a href="assembly-instruction.jpg" target="_blank">
+      <img
+        src="assembly-instruction.jpg"
+        alt="Фото-инструкция: как одевать и снимать звенья браслета Nomination"
+        class="w-full rounded-xl"
+      />
+    </a>
     <p class="text-ink-soft text-xs italic">
       Если техника правильного снятия и надевания кажется сложной, не волнуйтесь — у нас есть вспомогательное фото-руководство. Следуйте этим иллюстрациям для аккуратной работы с вашим украшением. На всякий случай!
     </p>
@@ -152,33 +154,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="text-ink-soft text-xs mt-1">Спасибо, что выбираете нас</p>
   </footer>
 
-  <script is:inline>
-    (function() {
-      var btn = document.getElementById('back-to-top');
-      var toc = document.querySelector('nav');
-      if (!btn || !toc) return;
-
-      function update() {
-        var y = window.scrollY || document.documentElement.scrollTop;
-        var show = y > 400;
-        btn.style.opacity = show ? '1' : '0';
-        btn.style.pointerEvents = show ? 'auto' : 'none';
-      }
-
-      update();
-      window.addEventListener('scroll', update, { passive: true });
-      btn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      var links = toc.querySelectorAll('a[href^="#"]');
-      for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener('click', function(e) {
-          e.preventDefault();
-          var target = document.querySelector(this.getAttribute('href'));
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      }
-    })();
-  </script>
+  <script is:inline src="nav.js"></script>
 </BaseLayout>
