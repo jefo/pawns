@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Уход за украшением"
+  description="Инструкция по уходу за браслетом Nomination: как снимать и надевать звенья, чистка, полировка, хранение."
+>
+  <!-- BRAND HEADER -->
+  <header class="text-center pt-2">
+    <div class="font-display text-2xl font-medium tracking-wide text-ink">paws уют</div>
+    <div class="text-xs text-accent tracking-[0.12em] uppercase mt-0.5">забота об украшениях</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="text-center">
+    <h1 class="font-display text-3xl font-medium text-ink leading-tight mb-2">
+      Как ухаживать за вашим браслетом
+    </h1>
+    <p class="text-ink-soft text-base max-w-[380px] mx-auto">
+      Пара минут внимания — и украшение будет радовать вас каждый день.
+    </p>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="w-10 h-px bg-accent-soft mx-auto"></div>
+
+  <!-- PHOTO INSTRUCTIONS -->
+  <section class="flex flex-col gap-4">
+    <h2 class="font-display text-2xl font-medium text-ink">Как снимать и надевать звенья</h2>
+    <p class="text-ink-soft text-sm">
+      Если техника правильного снятия кажется сложной — вот наглядное руководство. На всякий случай.
+    </p>
+
+    <div class="flex flex-col gap-8 mt-2">
+      <!-- Step 1 -->
+      <div class="flex flex-col gap-3">
+        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 1</div>
+        <div class="w-full aspect-4/3 bg-beige rounded-xl border border-dashed border-accent-soft flex items-center justify-center text-ink-soft text-sm">
+          <!-- Заменить на <img src="/photos/step-1.jpg" alt="..." class="w-full h-full object-cover rounded-xl" /> -->
+          Зафиксируйте браслет
+        </div>
+        <p class="text-ink-soft text-sm">Зафиксируйте браслет, чтобы он не сместился во время работы.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex flex-col gap-3">
+        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 2</div>
+        <div class="w-full aspect-4/3 bg-beige rounded-xl border border-dashed border-accent-soft flex items-center justify-center text-ink-soft text-sm">
+          Захватите звенья
+        </div>
+        <p class="text-ink-soft text-sm">Осторожно, специальным инструментом или аккуратно пальцами, захватите звенья.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex flex-col gap-3">
+        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 3</div>
+        <div class="w-full aspect-4/3 bg-beige rounded-xl border border-dashed border-accent-soft flex items-center justify-center text-ink-soft text-sm">
+          Разъедините звенья
+        </div>
+        <p class="text-ink-soft text-sm">Медленно разъедините звенья, следя за тем, чтобы не повредить покрытие.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex flex-col gap-3">
+        <div class="text-xs text-accent tracking-[0.06em] uppercase font-display">Шаг 4</div>
+        <div class="w-full aspect-4/3 bg-beige rounded-xl border border-dashed border-accent-soft flex items-center justify-center text-ink-soft text-sm">
+          Соедините звенья обратно
+        </div>
+        <p class="text-ink-soft text-sm">Чтобы надеть — повторите в обратном порядке: соедините звенья и аккуратно закрепите.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="w-10 h-px bg-accent-soft mx-auto"></div>
+
+  <!-- CARE INSTRUCTIONS -->
+  <section class="flex flex-col gap-4">
+    <h2 class="font-display text-2xl font-medium text-ink">Правила ухода</h2>
+
+    <div class="flex flex-col gap-3.5">
+      <!-- Cleaning -->
+      <div class="bg-beige rounded-xl p-5">
+        <h3 class="font-display text-lg font-medium text-ink mb-1">Чистка</h3>
+        <p class="text-ink-soft text-sm">Используйте мягкую сухую или чуть влажную ткань. Никаких абразивных средств.</p>
+        <div class="bg-warning-bg border-l-[3px] border-accent rounded-r-xl px-4.5 py-3.5 mt-2.5 text-ink-soft text-sm leading-relaxed">
+          <strong class="text-accent font-semibold">!</strong> Не используйте агрессивные химикаты или спирт — это может повредить покрытие.
+        </div>
+      </div>
+
+      <!-- Polishing -->
+      <div class="bg-beige rounded-xl p-5">
+        <h3 class="font-display text-lg font-medium text-ink mb-1">Полировка</h3>
+        <p class="text-ink-soft text-sm">Для сохранения блеска аккуратно протрите поверхность мягкой микрофибровой тканью. Полировочные пасты и средства не рекомендуются.</p>
+      </div>
+
+      <!-- Water -->
+      <div class="bg-beige rounded-xl p-5">
+        <h3 class="font-display text-lg font-medium text-ink mb-1">Берегите от воды</h3>
+        <p class="text-ink-soft text-sm">Несмотря на защиту УФ-смолы, браслет не водонепроницаем. Избегайте намокания и длительного контакта с водой.</p>
+      </div>
+
+      <!-- Storage -->
+      <div class="bg-beige rounded-xl p-5">
+        <h3 class="font-display text-lg font-medium text-ink mb-1">Хранение</h3>
+        <p class="text-ink-soft text-sm">Храните браслет в отдельной мягкой коробке или мешочке, чтобы избежать царапин. Не оставляйте в местах с высокой влажностью или температурой.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="w-10 h-px bg-accent-soft mx-auto"></div>
+
+  <!-- VIDEO -->
+  <section class="flex flex-col gap-4">
+    <h2 class="font-display text-2xl font-medium text-ink">Видео-инструкция</h2>
+    <div class="w-full aspect-video bg-beige rounded-xl border border-dashed border-accent-soft flex flex-col items-center justify-center gap-2.5 text-ink-soft text-sm">
+      <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white text-xl">▶</div>
+      <span>Видео появится здесь</span>
+    </div>
+    <p class="text-ink-soft text-xs italic">Скоро добавим подробную видео-инструкцию.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center pt-4">
+    <div class="font-display text-xl font-medium text-ink">paws уют</div>
+    <p class="text-ink-soft text-xs mt-1">Спасибо, что выбираете нас</p>
+  </footer>
+</BaseLayout>
