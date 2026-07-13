@@ -3,8 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://jefo.github.io",
-  base: "/pawns/",
+  site: "https://paws.kaizin.pro",
+  base: "/",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
