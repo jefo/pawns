@@ -39,11 +39,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="text-ink-soft text-sm">
       Как одевать и снимать звенья браслета Nomination (менее удобный способ)
     </p>
-    <img
-      src="assembly-instruction.jpg"
-      alt="Фото-инструкция: как одевать и снимать звенья браслета Nomination"
-      class="w-full rounded-xl"
-    />
+    <a href="assembly-instruction.jpg" target="_blank">
+      <img
+        src="assembly-instruction.jpg"
+        alt="Фото-инструкция: как одевать и снимать звенья браслета Nomination"
+        class="w-full rounded-xl"
+      />
+    </a>
     <p class="text-ink-soft text-xs italic">
       Если техника правильного снятия и надевания кажется сложной, не волнуйтесь — у нас есть вспомогательное фото-руководство. Следуйте этим иллюстрациям для аккуратной работы с вашим украшением. На всякий случай!
     </p>
@@ -119,22 +121,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- VIDEO -->
   <section id="video" class="flex flex-col gap-4">
     <h2 class="font-display text-2xl font-medium text-ink">Видео-инструкция</h2>
-    <p class="text-ink-soft text-sm">
-      Инструкция по добавлению и снятию звеньев браслета Nomination.
-    </p>
-    <video
-      src="instruction-video.mp4"
-      controls
-      playsinline
-      preload="metadata"
-      class="w-full max-w-[320px] mx-auto rounded-xl"
-      poster="assembly-instruction.jpg"
-    >
-      Ваш браузер не поддерживает видео.
-    </video>
-    <p class="text-ink-soft text-sm leading-relaxed">
-      Посмотрите это видео и узнайте, как легко и безопасно менять звенья, создавая новые комбинации и сохраняя качество вашего украшения. Простые шаги — стиль без усилий!
-    </p>
+
+    <!-- Video 1: снятие -->
+    <div class="flex flex-col gap-3">
+      <h3 class="font-display text-lg font-medium text-ink">Как снимать звенья</h3>
+      <video
+        src="instruction-video.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        class="w-full max-w-[320px] mx-auto rounded-xl"
+        poster="assembly-instruction.jpg"
+      >
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+
+    <!-- Video 2: скрепление -->
+    <div class="flex flex-col gap-3 mt-2">
+      <h3 class="font-display text-lg font-medium text-ink">Как скреплять звенья</h3>
+      <video
+        src="care-video.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        class="w-full max-w-[320px] mx-auto rounded-xl"
+      >
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
   </section>
 
   <!-- BACK TO TOP -->
@@ -152,26 +167,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="text-ink-soft text-xs mt-1">Спасибо, что выбираете нас</p>
   </footer>
 
-  <script>
-    const btn = document.getElementById('back-to-top');
-    const toc = document.querySelector('nav');
-
-    // Show/hide back-to-top button
-    window.addEventListener('scroll', () => {
-      btn.style.opacity = window.scrollY > 400 ? '1' : '0';
-      btn.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
-    });
-
-    // Scroll to top
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Smooth scroll for ToC links
-    toc.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+  <script is:inline src="nav.js"></script>
 </BaseLayout>
